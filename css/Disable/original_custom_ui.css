@@ -1,0 +1,166 @@
+:root {
+    --window-border: 8px;
+    /*--mac-header: calc(var(--window-border) + 0px);*/
+    --mac-header: 0px;
+    --win-header: calc(var(--window-border) + 12px);
+    --linux-header: calc(var(--window-border) + 0px);
+    --window-button-scale: 1;
+    --window-button-opacity: 0.3;
+    --tab-padding: calc(var(--window-border) / 2);
+}
+
+/*displayNewtabButton*/
+#browser .toolbar > .newtab > button {
+    color: rgb(255, 255, 255);
+    opacity:0.2;
+}
+#browser .toolbar > .newtab > button:hover {
+    color: rgb(255, 255, 255);
+    opacity:0.7;
+}
+
+/*topHeader*/
+#browser:not(.is-settingspage):not(.address-top) > #header {
+    box-shadow: none;
+    overflow: visible;
+}
+#browser:not(.is-settingspage).fullscreen > #header,
+#browser:not(.is-settingspage).tabs-off.address-top > #header {
+    display: none;
+}
+
+/*topHeader-Mac*/
+#browser.mac:not(.is-settingspage):not(.address-top) > #header,
+#browser.mac:not(.is-settingspage) #header{
+    background: var(--colorTabBar);
+    min-height: var(--mac-header) !important;
+}
+.mac #titlebar #pagetitle {
+    height:var(--mac-header) !important;
+    font-size:11px;
+    color:var(--colorfg);
+    color:transparent;
+}
+
+/*topHeader-Win*/
+#browser.win:not(.is-settingspage):not(.address-top) > #header {
+    min-height:var(--win-header) !important;
+    background:var(--colorTabBar);
+}
+#browser.win #titlebar #pagetitle{
+    height:var(--win-header);
+    padding:0 140px;
+}
+#browser.win #titlebar #pagetitle{
+    font-size:11px;
+    color:var(--colorFg);
+    color:transparent;
+}
+
+/*windowButtonGroup-Mac*/
+#browser.mac:not(.is-settingspage) .window-buttongroup button{
+    display: none;
+}
+
+/*windowButtonGroup-Win*/
+#browser.win:not(.is-settingspage) #header #titlebar .window-buttongroup{
+    opacity:var(--window-button-opacity);
+    color:var(--colorFg);
+    line-height:var(--win-header);
+}
+#browser.win:not(.is-settingspage) #header #titlebar .window-buttongroup:hover{
+    opacity:1;
+}
+#browser.win:not(.is-settingspage) #header #titlebar .window-buttongroup button,
+#browser.win:not(.is-settingspage) #header #titlebar .window-buttongroup button.window-close{
+    width: calc(var(--win-header) * 2);
+    height:var(--win-header);
+}
+#browser.win:not(.is-settingspage) #header #titlebar .window-buttongroup button.window-minimize svg,
+#browser.win:not(.is-settingspage) #header #titlebar .window-buttongroup button.window-maximize svg,
+#browser.win:not(.is-settingspage) #header #titlebar .window-buttongroup button.window-close svg{
+    scale:var(--window-button-scale);
+}
+
+/*windowVivaldi*/
+.disable-titlebar.address-top#browser .vivaldi{
+    border-radius:var(--radiusCap);
+    margin:0 9px;
+}
+.disable-titlebar.address-top#browser .vivaldi:hover{
+    background-color:var(--colorFgAlpha);
+}
+#browser.win:not(.is-settingspage) #titlebar .vivaldi{
+    color:var(--colorFgAlpha);
+    scale: calc(0.7 / var(--uiZoomLevel));
+    margin-left: -6px;
+    margin-top: -4px;
+}
+#browser.win:not(.is-settingspage) #titlebar .vivaldi:hover{
+    color:var(--colorFg);
+    background-color:var(--colorImageBgAlpha), var(--colorBgAlpha);
+}
+
+/*webview*/
+#browser:not(.fullscreen).tabs-off #webview-container{
+    margin: var(--window-border) var(--window-border) var(--window-border) var(--window-border);
+}
+#browser:not(.fullscreen).tabs-left #webview-container{
+    margin: var(--window-border) var(--window-border) var(--window-border) 0px;
+}
+#browser:not(.fullscreen) #webpage-stack {
+    border-radius:var(--radiusCap);
+    border: 0px solid rgba(255, 255, 255, 0.2);
+    background: rgb(35, 33, 54, 0.2);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+/*tabbar*/
+.tabs-left .inner > .tabbar-wrapper {
+    margin: var(--window-border) var(--tab-padding);
+}
+#tabs-tabbar-container.left {
+    padding-top: 0px;
+}
+
+/*panel*/
+#browser:not(.fullscreen) #panels-container{
+    background: var(--colorToviTransparent);
+}
+#browser:not(.fullscreen) #panels-container:not(.icons) .panel-group{
+    margin: var(--window-border) 0 var(--window-border) 0px;
+    background: var(--colorBgAlphaBlur);
+}
+#browser:not(.fullscreen) #panels-container .panel-group{
+    border-radius: var(--radiusCap);
+    border: 0.00px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+/*mainbar*/
+#browser .mainbar {
+    border: none;
+    background: var(--colorTabBar);
+    color: var(--colorFg);
+}
+#browser .UrlBar-SearchField,
+#browser .UrlBar-AddressField, 
+#browser .SearchField {
+    background-color: var(--colorFgAlpha);
+    border: 4px solid var(--colorFgAlpha);
+    backdrop-filter: blur(10px);
+}
+.UrlBar-UrlFieldWrapper .OmniDropdown {
+    background-color: var(--colorFgAlpha);
+    backdrop-filter: blur(10px);
+}
+
+/*bookmarkbar*/
+#browser .bookmark-bar,
+#browser .bookmark-bar button {
+    background: var(--colorTabBar);
+    color: var(--colorFg);
+    border-bottom-width: 0;
+    border-radius: var(--radiusHalf);
+}
+

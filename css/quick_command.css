@@ -1,0 +1,35 @@
+/* expand width */
+.quick-command-container,
+.quick-command-container .quick-commands > div {
+    min-width: 45vw;
+}
+.quick-command-container .quick-commands > div > div {
+    max-width: 100% !important;
+}
+
+#modal-bg .modal-wrapper {
+    border-radius: var(--radiusCap);
+}
+
+.qc-modal > div {
+    color: var(--colorFgIntense) !important;
+    background-color: rgba(30, 30, 30, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border: 0.8px solid rgba(160, 160, 160, 0.7);
+}
+
+.quick-commands, input.quick-command-search-hint {
+    background-color: transparent !important;
+}
+
+.qc-modal ::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.qc-modal ::-webkit-scrollbar-thumb {
+    background-color: rgba(180, 180, 180, 0.5) !important;
+}
+
+.qc-modal ::-webkit-scrollbar-button {
+    display: none;
+}
