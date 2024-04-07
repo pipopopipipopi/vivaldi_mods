@@ -233,7 +233,7 @@
 #browser:not(.tabs-top):not(.tabs-bottom).dim-blurred:not(.hasfocus) .SearchField, 
 #browser:not(.tabs-top):not(.tabs-bottom).color-behind-tabs-off .SearchField, 
 #browser:not(.tabs-top):not(.tabs-bottom).color-behind-tabs-off .UrlBar-AddressField {
-    border: 2px solid var(--colorFgAlpha);
+    border: 1px solid var(--colorFgAlpha);
 }
 
 .UrlFragment-Wrapper--ShouldHighlight{
